@@ -1,11 +1,8 @@
 {
-  "name": "pwa",
+  "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,8 +13,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "build-sw": "workbox generateSW --config workbox-config.js",
+    "build": "react-scripts build && npm run build-sw",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "workbox-cli": "^7.0.0",
+    "workbox-webpack-plugin": "^7.0.0"
   }
 }
